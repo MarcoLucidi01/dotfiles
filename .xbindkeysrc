@@ -1,0 +1,66 @@
+# Pattern:
+# - Mod4 + [key] = launch a program;
+# - Control+Shift + [key] = system setting.
+
+"xterm"
+    Mod4 + t                                   # terminal
+
+"firefox-esr"
+    Mod4 + w                                   # web browser
+
+"thunderbird"
+    XF86Mail
+"thunderbird"
+    Mod4 + m                                   # mail client
+
+"xterm -e vi"
+    Mod4 + e                                   # editor
+
+"xterm -e python3 -ic 'import math'"
+    XF86Calculator
+"xterm -e python3 -ic 'import math'"
+    Mod4 + c                                   # calculator
+
+# audio
+
+"amixer -q set Master unmute 5%+ && $HOME/utils/dwm_status.sh"
+    XF86AudioRaiseVolume
+"amixer -q set Master unmute 5%+ && $HOME/utils/dwm_status.sh"
+    Control+Shift + Up
+
+"amixer -q set Master 5%- && $HOME/utils/dwm_status.sh"
+    XF86AudioLowerVolume
+"amixer -q set Master 5%- && $HOME/utils/dwm_status.sh"
+    Control+Shift + Down
+
+"amixer -q set Master toggle && $HOME/utils/dwm_status.sh"
+    XF86AudioMute
+"amixer -q set Master toggle && $HOME/utils/dwm_status.sh"
+    Control+Shift + m
+
+# screen
+
+"sudo $HOME/utils/acpi_brightness.sh +"
+    XF86MonBrightnessUp
+"sudo $HOME/utils/acpi_brightness.sh +"        # brightness with acpi (superpowers required)
+    Control+Shift + Right
+
+"sudo $HOME/utils/acpi_brightness.sh -"
+    XF86MonBrightnessDown
+"sudo $HOME/utils/acpi_brightness.sh -"
+    Control+Shift + Left
+
+"slock"
+    Control+Shift + l                          # lock the screen
+
+"scrot $HOME/screenshot_%Y%m%d%H%M%S.png"
+    Print
+"scrot $HOME/screenshot_%Y%m%d%H%M%S.png"
+    Control+Shift + p                          # screen capture
+
+# system
+
+"sudo systemctl suspend"
+    XF86Sleep
+"sudo systemctl suspend"                       # suspend on RAM (superpowers required)
+    Control+Shift + s

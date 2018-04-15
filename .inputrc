@@ -1,0 +1,4 @@
+# enable vi-like keybindings in all Readline based programs
+set editing-mode vi
+
+Control-l: clear-screen

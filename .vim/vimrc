@@ -1,0 +1,84 @@
+set background=dark
+set t_Co=256            " 256 colors
+syntax on
+colorscheme paramount
+
+set encoding=utf8       " set utf8 as standard encoding
+
+set path+=**            " search down into subfolders
+
+set spell               " spell check
+set complete+=kspell    " word completion
+
+set wildmenu            " completion menu
+
+set history=50
+set nobackup            " no backup files
+
+set scrolloff=5         " scroll lines offset using j/k
+set relativenumber      " numbers are relative to current line
+
+set ignorecase          " ignore case when searching
+set smartcase           " but become case sensitive if there are uppercase characters
+set hlsearch            " highlights search results
+set incsearch           " incremental search
+set magic               " change the way backslashes are used in search patterns
+
+set textwidth=80        " max line width
+set colorcolumn=81      " highlights 81th column
+set cursorline          " highlights current line
+
+set expandtab           " spaces instead of tabs
+set tabstop=8           " 1 tab == 8 spaces
+set autoindent
+set smarttab            " smart tab handling for indenting
+set shiftwidth=8        " spaces for autoindent
+set listchars=trail:-   " show trailing spaces as -
+set list                " needed to get listchars working
+
+filetype plugin indent on
+
+set formatoptions+=j    " remove a comment leader when joining lines
+
+set laststatus=2        " always show statusline
+set statusline+=%n\     " buffer number
+set statusline+=%F\     " full path
+set statusline+=%y      " file type
+set statusline+=%r      " readonly flag
+set statusline+=%m      " modified flag
+set statusline+=%=      " right side
+set statusline+=c:%v\   " column number
+set statusline+=l:%l/%L " current line / total lines
+
+" return to last edit position when opening files
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+" MakeTags creates the "tags" file (ctags must be installed)
+command! MakeTags !ctags -R .
+
+" F2 toggle to enter or exit paste mode
+set pastetoggle=<F2>
+
+" F3 turn off highlighting after a search
+map <F3> :nohlsearch<CR>
+
+" F4 open files explorer
+map <F4> :Explore<CR>
+
+" F5 starts a shell
+map <F5> :shell<CR>
+
+" , go to next window
+map , <C-W>w
+
+" ; go to previous window
+map ; <C-W>p
+
+" tab go to next buffer
+map <tab> :bnext<CR>
+
+" Shift+tab go to previous buffer
+map <S-tab> :bprevious<CR>
