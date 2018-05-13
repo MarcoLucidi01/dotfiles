@@ -23,31 +23,31 @@
 
 # audio
 
-"amixer -q set Master unmute 5%+ && $HOME/utils/dwm_status.sh"
+"amixer -q set Master unmute 5%+ && dwm_status"
     XF86AudioRaiseVolume
-"amixer -q set Master unmute 5%+ && $HOME/utils/dwm_status.sh"
+"amixer -q set Master unmute 5%+ && dwm_status"
     Control+Shift + Up
 
-"amixer -q set Master 5%- && $HOME/utils/dwm_status.sh"
+"amixer -q set Master 5%- && dwm_status"
     XF86AudioLowerVolume
-"amixer -q set Master 5%- && $HOME/utils/dwm_status.sh"
+"amixer -q set Master 5%- && dwm_status"
     Control+Shift + Down
 
-"amixer -q set Master toggle && $HOME/utils/dwm_status.sh"
+"amixer -q set Master toggle && dwm_status"
     XF86AudioMute
-"amixer -q set Master toggle && $HOME/utils/dwm_status.sh"
+"amixer -q set Master toggle && dwm_status"
     Control+Shift + m
 
 # screen
 
-"sudo $HOME/utils/acpi_brightness.sh +"
+"sudo $HOME/bin/acpi_brightness +"
     XF86MonBrightnessUp
-"sudo $HOME/utils/acpi_brightness.sh +"        # brightness with acpi (superpowers required)
+"sudo $HOME/bin/acpi_brightness +"        # brightness with acpi (superpowers required)
     Control+Shift + Right
 
-"sudo $HOME/utils/acpi_brightness.sh -"
+"sudo $HOME/bin/acpi_brightness -"
     XF86MonBrightnessDown
-"sudo $HOME/utils/acpi_brightness.sh -"
+"sudo $HOME/bin/acpi_brightness -"
     Control+Shift + Left
 
 "slock"
