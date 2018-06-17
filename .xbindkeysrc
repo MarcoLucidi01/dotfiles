@@ -42,7 +42,7 @@
 
 "sudo $HOME/bin/acpi_brightness +"
     XF86MonBrightnessUp
-"sudo $HOME/bin/acpi_brightness +"        # brightness with acpi (superpowers required)
+"sudo $HOME/bin/acpi_brightness +"             # brightness with acpi (superpowers required)
     Control+Shift + Right
 
 "sudo $HOME/bin/acpi_brightness -"
@@ -54,9 +54,7 @@
     Control+Shift + l                          # lock the screen
 
 "scrot $HOME/screenshot_%Y%m%d%H%M%S.png"
-    Print
-"scrot $HOME/screenshot_%Y%m%d%H%M%S.png"
-    Control+Shift + p                          # screen capture
+    Print                                      # screen capture
 
 # system
 
