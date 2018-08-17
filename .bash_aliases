@@ -18,5 +18,3 @@ alias diff="diff --color=auto"
 
 alias mpv="mpv --no-audio-display --fullscreen --sub-auto=fuzzy --sub-codepage=UTF-8-BROKEN"
 alias rmpv="mpv --shuffle"
-
-alias log="vi +0 $HOME/log.txt"
