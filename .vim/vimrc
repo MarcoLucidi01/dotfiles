@@ -79,8 +79,24 @@ map , <C-W>w
 " ; go to previous window
 map ; <C-W>p
 
+" - increment vertical window size
+map - <C-W>+
+
+" _ reduce vertical window size
+map _ <C-W>-
+
+" \ increment horizontal window size
+map \ <C-W>>
+
+" | reduce horizontal window size
+map \| <C-W><
+
 " tab go to next buffer
 map <tab> :bnext<CR>
 
 " Shift+tab go to previous buffer
 map <S-tab> :bprevious<CR>
+
+let g:netrw_banner=0                                " hide banner
+let g:netrw_liststyle=3                             " tree view
+let g:netrw_bufsettings='noma nomod nobl nowrap ro' " keep relative numbers
