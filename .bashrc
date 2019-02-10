@@ -79,3 +79,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# enable z (https://github.com/rupa/z)
+. ~/bin/z.sh
