@@ -2,9 +2,6 @@
 # - Mod4 + [key] = launch a program;
 # - Control+Shift + [key] = system setting.
 
-"xterm"
-    Mod4 + t                                   # terminal
-
 "firefox-esr"
     Mod4 + w                                   # web browser
 
@@ -12,14 +9,6 @@
     XF86Mail
 "thunderbird"
     Mod4 + m                                   # mail client
-
-"xterm -e vi"
-    Mod4 + e                                   # editor
-
-"xterm -e python3 -ic 'import math'"
-    XF86Calculator
-"xterm -e python3 -ic 'import math'"
-    Mod4 + c                                   # calculator
 
 # audio
 
