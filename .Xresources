@@ -12,7 +12,7 @@ xterm*faceName: DejaVu Sans Mono:style=Book:antialias=true
 xterm*faceSize: 12
 
 ! every shell is a login shell
-xterm*loginshell: true
+xterm*loginShell: true
 
 ! colors
 xterm*foreground: rgb:a8/a8/a8
