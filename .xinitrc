@@ -1,4 +1,3 @@
-xrdb $HOME/.Xresources
 xset s off -dpms &              # disable DPMS and prevent screen from blanking
 xbindkeys &
 unclutter -idle 3 -root -noevents &
