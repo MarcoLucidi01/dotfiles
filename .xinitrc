@@ -1,4 +1,4 @@
-xset s off -dpms &              # disable DPMS and prevent screen from blanking
+xset s off -dpms r rate 250 60 &
 xbindkeys &
 unclutter -idle 3 -root -noevents &
 battery_monitor &
