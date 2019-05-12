@@ -1,5 +1,4 @@
 xset s off -dpms r rate 250 60 &
-xbindkeys &
 unclutter -idle 3 -root -noevents &
 battery_monitor &
 while [ 1 ]; do dwm_status; sleep 30; done &
