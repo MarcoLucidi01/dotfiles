@@ -53,41 +53,48 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]        = { "st", NULL };
-static const char *browsercmd[]     = { "firefox-esr", NULL };
-static const char *mailcmd[]        = { "thunderbird", NULL };
-static const char *lockscreencmd[]  = { "slock", NULL };
-static const char *sleepcmd[]       = { "sudo", "systemctl", "suspend", NULL };
-static const char *volupcmd[]       = SHCMD("amixer -q set Master unmute 5%+ && dwm_status");
-static const char *voldowncmd[]     = SHCMD("amixer -q set Master unmute 5%- && dwm_status");
-static const char *voltogglecmd[]   = SHCMD("amixer -q set Master toggle && dwm_status");
-static const char *screenshootcmd[] = SHCMD("scrot $HOME/screenshot_%Y%m%d%H%M%S.png");
+static const char *dmenucmd[]        = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]         = { "st", NULL };
+static const char *browsercmd[]      = { "firefox-esr", NULL };
+static const char *mailcmd[]         = { "thunderbird", NULL };
+static const char *lockscreencmd[]   = { "slock", NULL };
+static const char *sleepcmd[]        = { "systemctl", "suspend", NULL };
+static const char *volupcmd[]        = SHCMD("amixer -q set Master unmute 5%+ && dwm_status");
+static const char *voldowncmd[]      = SHCMD("amixer -q set Master unmute 5%- && dwm_status");
+static const char *voltogglecmd[]    = SHCMD("amixer -q set Master toggle && dwm_status");
+static const char *mpvplaypausecmd[] = SHCMD("echo cycle pause > $HOME/.config/mpv/control");
+static const char *mpvnextcmd[]      = SHCMD("echo playlist-next > $HOME/.config/mpv/control");
+static const char *mpvprevcmd[]      = SHCMD("echo playlist-prev > $HOME/.config/mpv/control");
 static const char *brightupcmd[]     = SHCMD("xbacklight -inc 5 && dwm_status");
 static const char *brightdowncmd[]   = SHCMD("xbacklight -dec 5 && dwm_status");
+static const char *screenshootcmd[]  = SHCMD("scrot $HOME/screenshot_%Y%m%d%H%M%S.png");
 
 #include <X11/XF86keysym.h>
 
 static Key keys[] = {
 	/* custom keys */
-	{ MODKEY,                       XK_p,                     spawn, {.v = dmenucmd       } },
-	{ Mod4Mask,                     XK_t,                     spawn, {.v = termcmd        } },
-	{ Mod4Mask,                     XK_w,                     spawn, {.v = browsercmd     } },
-	{ Mod4Mask,                     XK_m,                     spawn, {.v = mailcmd        } },
-	{ ControlMask|ShiftMask,        XK_l,                     spawn, {.v = lockscreencmd  } },
-	{ ControlMask|ShiftMask,        XK_s,                     spawn, {.v = sleepcmd       } },
-	{ 0,                            XF86XK_Sleep,             spawn, {.v = sleepcmd       } },
-	{ ControlMask|ShiftMask,        XK_Up,                    spawn, {.v = volupcmd       } },
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = volupcmd       } },
-	{ ControlMask|ShiftMask,        XK_Down,                  spawn, {.v = voldowncmd     } },
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = voldowncmd     } },
-	{ ControlMask|ShiftMask,        XK_m,                     spawn, {.v = voltogglecmd   } },
-	{ 0,                            XF86XK_AudioMute,         spawn, {.v = voltogglecmd   } },
-	{ ControlMask|ShiftMask,        XK_Right,                 spawn, {.v = brightupcmd    } },
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = brightupcmd    } },
-	{ ControlMask|ShiftMask,        XK_Left,                  spawn, {.v = brightdowncmd  } },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn, {.v = brightdowncmd  } },
-	{ 0,                            XK_Print,                 spawn, {.v = screenshootcmd } },
+	{ MODKEY,                       XK_p,                     spawn, {.v = dmenucmd        } },
+	{ Mod4Mask,                     XK_t,                     spawn, {.v = termcmd         } },
+	{ Mod4Mask,                     XK_w,                     spawn, {.v = browsercmd      } },
+	{ Mod4Mask,                     XK_m,                     spawn, {.v = mailcmd         } },
+	{ ControlMask|ShiftMask,        XK_l,                     spawn, {.v = lockscreencmd   } },
+	{ ControlMask|ShiftMask,        XK_s,                     spawn, {.v = sleepcmd        } },
+	{ 0,                            XF86XK_Sleep,             spawn, {.v = sleepcmd        } },
+	{ ControlMask|ShiftMask,        XK_Up,                    spawn, {.v = volupcmd        } },
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = volupcmd        } },
+	{ ControlMask|ShiftMask,        XK_Down,                  spawn, {.v = voldowncmd      } },
+	{ 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = voldowncmd      } },
+	{ ControlMask|ShiftMask,        XK_m,                     spawn, {.v = voltogglecmd    } },
+	{ 0,                            XF86XK_AudioMute,         spawn, {.v = voltogglecmd    } },
+	{ ControlMask|ShiftMask,        XK_F10,                   spawn, {.v = mpvprevcmd      } },
+	{ ControlMask|ShiftMask,        XK_F11,                   spawn, {.v = mpvplaypausecmd } },
+	{ 0,                            XF86XK_AudioPlay,         spawn, {.v = mpvplaypausecmd } },
+	{ ControlMask|ShiftMask,        XK_F12,                   spawn, {.v = mpvnextcmd      } },
+	{ ControlMask|ShiftMask,        XK_Right,                 spawn, {.v = brightupcmd     } },
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = brightupcmd     } },
+	{ ControlMask|ShiftMask,        XK_Left,                  spawn, {.v = brightdowncmd   } },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn, {.v = brightdowncmd   } },
+	{ 0,                            XK_Print,                 spawn, {.v = screenshootcmd  } },
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
