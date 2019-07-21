@@ -16,5 +16,5 @@ alias egrep="egrep --color=auto"
 
 alias diff="diff --color=auto"
 
-alias mpv="mpv --no-audio-display --fullscreen --sub-auto=fuzzy --sub-codepage=UTF-8-BROKEN"
+alias mpv="mpv --input-file=$HOME/.config/mpv/control --no-audio-display --fullscreen --sub-auto=fuzzy --sub-codepage=UTF-8-BROKEN"
 alias rmpv="mpv --shuffle"
