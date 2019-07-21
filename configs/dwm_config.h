@@ -62,9 +62,9 @@ static const char *sleepcmd[]       = { "sudo", "systemctl", "suspend", NULL };
 static const char *volupcmd[]       = SHCMD("amixer -q set Master unmute 5%+ && dwm_status");
 static const char *voldowncmd[]     = SHCMD("amixer -q set Master unmute 5%- && dwm_status");
 static const char *voltogglecmd[]   = SHCMD("amixer -q set Master toggle && dwm_status");
-static const char *brightupcmd[]    = SHCMD("sudo $HOME/bin/acpi_brightness +");
-static const char *brightdowncmd[]  = SHCMD("sudo $HOME/bin/acpi_brightness -");
 static const char *screenshootcmd[] = SHCMD("scrot $HOME/screenshot_%Y%m%d%H%M%S.png");
+static const char *brightupcmd[]     = SHCMD("xbacklight -inc 5 && dwm_status");
+static const char *brightdowncmd[]   = SHCMD("xbacklight -dec 5 && dwm_status");
 
 #include <X11/XF86keysym.h>
 
