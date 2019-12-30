@@ -5,7 +5,7 @@ alias rem="sudo apt-get purge"
 
 alias ..="cd .."
 
-alias l="ls --color=auto -F"
+alias l="ls --color=auto -F -1 -h"
 alias la="l -A"
 alias ll="l -l"
 alias lal="l -Al"
