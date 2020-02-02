@@ -82,3 +82,6 @@ fi
 
 # enable z (https://github.com/rupa/z)
 . ~/bin/z.sh
+
+# go workspace path
+export GOPATH="$HOME/.go"

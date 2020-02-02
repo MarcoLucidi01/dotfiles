@@ -3,6 +3,9 @@ set t_Co=256             " 256 colors
 syntax on
 colorscheme paramount
 
+" custom color for listchars (trailing spaces and tabs)
+highlight SpecialKey cterm=NONE ctermbg=NONE ctermfg=235 gui=NONE guibg=NONE guifg=#262626
+
 set encoding=utf8        " set utf8 as standard encoding
 
 set path=**
@@ -36,7 +39,7 @@ set tabstop=8            " 1 tab == 8 spaces
 set autoindent
 set smarttab             " smart tab handling for indenting
 set shiftwidth=8         " spaces for autoindent
-set listchars=trail:-    " show trailing spaces as -
+set listchars=trail:-,tab:>-    " show trailing spaces as - and tabs as >-------
 set list                 " needed to get listchars working
 
 filetype plugin indent on
@@ -45,6 +48,9 @@ set formatoptions+=j     " remove a comment leader when joining lines
 
 set ruler                " show line and column number of the cursor position
 set laststatus=2         " always show statusline
+
+" go wants tabs
+autocmd Filetype go setlocal noexpandtab
 
 " return to last edit position when opening files
 autocmd BufReadPost *
