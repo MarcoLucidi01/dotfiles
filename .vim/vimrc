@@ -14,6 +14,7 @@ set completeopt=menuone  " show completion menu even if there's only one match
 set completeopt+=longest " insert only longest common text of all matches
 
 set wildmenu             " command-line completion menu
+set wildignorecase       " ignore case when completing file names and directories
 
 set history=50
 set nobackup             " no backup files
@@ -61,44 +62,23 @@ autocmd BufReadPost *
 " MakeTags creates the "tags" file (ctags must be installed)
 command! MakeTags !ctags -R .
 
-" F2 toggle to enter or exit paste mode
+" toggle paste mode
 set pastetoggle=<F2>
 
-" F3 turn off highlighting after a search
+" turn off highlighting after a search
 map <F3> :nohlsearch<CR>
 
-" F4 open files explorer
+" open files explorer
 map <F4> :Explore<CR>
 
-" F5 starts a shell
+" start a shell
 map <F5> :shell<CR>
 
 " toggle spell checker
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
-" , go to next window
-map , <C-W>w
-
-" ; go to previous window
-map ; <C-W>p
-
-" - increment vertical window size
-map - <C-W>+
-
-" _ reduce vertical window size
-map _ <C-W>-
-
-" \ increment horizontal window size
-map \ <C-W>>
-
-" | reduce horizontal window size
-map \| <C-W><
-
-" tab go to next buffer
-map <tab> :bnext<CR>
-
-" Shift+tab go to previous buffer
-map <S-tab> :bprevious<CR>
+" list buffers and prepare for switching
+map gb :buffers<CR>:b
 
 let g:netrw_banner=0                                " hide banner
 let g:netrw_liststyle=3                             " tree view
