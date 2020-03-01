@@ -2,3 +2,5 @@
 set editing-mode vi
 
 Control-l: clear-screen
+
+set completion-ignore-case on
