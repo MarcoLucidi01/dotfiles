@@ -1,4 +1,4 @@
-xset s off -dpms r rate 250 60 &
+xset s off -dpms &
 monsetup &
 unclutter -idle 3 -root -noevents &
 battery_monitor &
