@@ -61,14 +61,14 @@ static const char *browsercmd[]      = { "firefox-esr", NULL };
 static const char *mailcmd[]         = { "thunderbird", NULL };
 static const char *lockscreencmd[]   = { "slock", NULL };
 static const char *sleepcmd[]        = { "systemctl", "suspend", NULL };
-static const char *volupcmd[]        = SHCMD("amixer -q set Master unmute 5%+ && dwm_status");
-static const char *voldowncmd[]      = SHCMD("amixer -q set Master unmute 5%- && dwm_status");
-static const char *voltogglecmd[]    = SHCMD("amixer -q set Master toggle && dwm_status");
+static const char *volupcmd[]        = SHCMD("amixer -q set Master unmute 10%+ && refreshbar");
+static const char *voldowncmd[]      = SHCMD("amixer -q set Master unmute 10%- && refreshbar");
+static const char *voltogglecmd[]    = SHCMD("amixer -q set Master toggle && refreshbar");
 static const char *mpvplaypausecmd[] = SHCMD("echo cycle pause > $HOME/.config/mpv/control");
 static const char *mpvnextcmd[]      = SHCMD("echo playlist-next > $HOME/.config/mpv/control");
 static const char *mpvprevcmd[]      = SHCMD("echo playlist-prev > $HOME/.config/mpv/control");
-static const char *brightupcmd[]     = SHCMD("xbacklight -inc 5 && dwm_status");
-static const char *brightdowncmd[]   = SHCMD("xbacklight -dec 5 && dwm_status");
+static const char *brightupcmd[]     = SHCMD("xbacklight -inc 10");
+static const char *brightdowncmd[]   = SHCMD("xbacklight -dec 10");
 static const char *screenshootcmd[]  = SHCMD("scrot $HOME/screenshot_%Y%m%d%H%M%S.png");
 
 #include <X11/XF86keysym.h>
