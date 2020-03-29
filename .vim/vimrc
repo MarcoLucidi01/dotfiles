@@ -50,6 +50,8 @@ set formatoptions+=j     " remove a comment leader when joining lines
 set ruler                " show line and column number of the cursor position
 set laststatus=2         " always show statusline
 
+set lazyredraw           " do not redraw screen in the middle of a macro
+
 " go wants tabs
 autocmd Filetype go setlocal noexpandtab
 
