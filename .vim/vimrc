@@ -84,3 +84,5 @@ map gb :buffers<CR>:b
 let g:netrw_banner=0                                " hide banner
 let g:netrw_liststyle=3                             " tree view
 let g:netrw_bufsettings='noma nomod nobl nowrap ro' " keep relative numbers
+
+let g:hardtime_default_on=1     " hardtime on by default
