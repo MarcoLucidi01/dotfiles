@@ -85,3 +85,9 @@ fi
 
 # go workspace path
 export GOPATH="$HOME/.go"
+
+# fzf setup, bash-bindings and bash-completion
+export FZF_DEFAULT_COMMAND="find ."
+export FZF_DEFAULT_OPTS="--multi --reverse --height=40% --bind=esc:cancel"
+. /usr/share/bash-completion/completions/fzf
+. /usr/share/doc/fzf/examples/key-bindings.bash
