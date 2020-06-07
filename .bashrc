@@ -88,6 +88,8 @@ export GOPATH="$HOME/.go"
 
 # fzf setup, bash-bindings and bash-completion
 export FZF_DEFAULT_COMMAND="find ."
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -type d"
 export FZF_DEFAULT_OPTS="--multi --reverse --height=40% --bind=esc:cancel"
 . /usr/share/bash-completion/completions/fzf
 . /usr/share/doc/fzf/examples/key-bindings.bash
