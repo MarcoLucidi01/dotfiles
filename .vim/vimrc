@@ -1,10 +1,10 @@
 set background=dark
 set t_Co=256             " 256 colors
 syntax on
-colorscheme paramount
+colorscheme solarized
 
 " custom color for listchars (trailing spaces and tabs)
-highlight SpecialKey cterm=NONE ctermbg=NONE ctermfg=235 gui=NONE guibg=NONE guifg=#262626
+highlight SpecialKey cterm=NONE ctermbg=NONE ctermfg=244 gui=NONE guibg=NONE guifg=#839496
 
 set encoding=utf8        " set utf8 as standard encoding
 
@@ -72,11 +72,8 @@ map <F3> :nohlsearch<CR>
 " open files explorer
 map <F4> :Explore<CR>
 
-" start a shell
-map <F5> :shell<CR>
-
 " toggle spell checker
-map <F6> :setlocal spell! spelllang=en_us<CR>
+map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " list buffers and prepare for switching
 map gb :buffers<CR>:b
