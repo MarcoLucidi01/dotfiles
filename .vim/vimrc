@@ -51,8 +51,9 @@ set laststatus=2         " always show statusline
 
 set lazyredraw           " do not redraw screen in the middle of a macro
 
-" go wants tabs
+" go wants tabs, don't highlight them
 autocmd Filetype go setlocal noexpandtab
+autocmd Filetype go setlocal listchars=trail:-,tab:\ \ ,
 
 " return to last edit position when opening files
 autocmd BufReadPost *
