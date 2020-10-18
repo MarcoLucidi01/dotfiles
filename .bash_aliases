@@ -18,3 +18,13 @@ alias diff="diff --color=auto"
 
 alias mpv="mpv --input-file=$HOME/.config/mpv/control --no-audio-display --fullscreen --sub-auto=fuzzy --sub-codepage=UTF-8-BROKEN"
 alias rmpv="mpv --shuffle"
+
+alias g="git"
+alias ga="g add"
+alias gc="g commit"
+alias gd="g diff"
+alias gds="gd --staged"
+alias gf="g fetch"
+alias gl="g log --graph --date='format:%Y-%m-%d %H:%M' --pretty='format:%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'"
+alias gp="g pull"
+alias gs="g status"
