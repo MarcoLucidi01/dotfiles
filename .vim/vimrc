@@ -65,6 +65,10 @@ autocmd BufReadPost *
 " MakeTags creates the "tags" file (ctags must be installed)
 command! MakeTags !ctags -R .
 
+" make this line a (nice) markdown header
+command H1 normal yypVr=2o<ESC>
+command H2 normal yypVr-2o<ESC>
+
 " toggle paste mode
 set pastetoggle=<F2>
 
