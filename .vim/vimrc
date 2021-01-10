@@ -52,6 +52,8 @@ set laststatus=2         " always show statusline
 
 set lazyredraw           " do not redraw screen in the middle of a macro
 
+set spellcapcheck=       " do not spell check capital letters
+
 " go wants tabs
 autocmd Filetype go setlocal noexpandtab
 
@@ -78,7 +80,7 @@ map <F3> :nohlsearch<CR>
 map <F4> :Explore<CR>
 
 " toggle spell checker
-map <F5> :setlocal spell! spelllang=en_us<CR>
+map <F5> :setlocal spell! spelllang=en,it<CR>
 
 " list buffers and prepare for switching
 map gb :buffers<CR>:b
