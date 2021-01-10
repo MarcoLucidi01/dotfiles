@@ -40,8 +40,8 @@ set tabstop=8            " 1 tab == 8 spaces
 set autoindent
 set smarttab             " smart tab handling for indenting
 set shiftwidth=8         " spaces for autoindent
-set listchars=trail:-,tab:>-    " show trailing spaces as - and tabs as >-------
 set list                 " needed to get listchars working
+set listchars=trail:-,tab:▸\  " show trailing spaces as - and tabs as ▸
 
 filetype plugin indent on
 
@@ -52,9 +52,8 @@ set laststatus=2         " always show statusline
 
 set lazyredraw           " do not redraw screen in the middle of a macro
 
-" go wants tabs, don't highlight them
+" go wants tabs
 autocmd Filetype go setlocal noexpandtab
-autocmd Filetype go setlocal listchars=trail:-,tab:\ \ ,
 
 " return to last edit position when opening files
 autocmd BufReadPost *
