@@ -17,6 +17,7 @@ set wildignorecase       " ignore case when completing file names and directorie
 
 set history=50
 set nobackup             " no backup files
+set viminfo+=n~/.vim/viminfo " viminfo file inside ~/.vim
 
 set scrolloff=3          " scroll lines offset using j/k
 set relativenumber       " numbers are relative to current line
