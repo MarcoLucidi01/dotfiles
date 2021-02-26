@@ -5,10 +5,13 @@ alias rem="sudo apt-get purge"
 
 alias ..="cd .."
 
-alias l="ls --color=auto -F -1 -h"
+alias ls="ls --color=auto -F -h"
+alias l="ls -1"
 alias la="l -A"
-alias ll="l -l"
-alias lal="l -Al"
+alias ll="ls -l"
+alias lal="ls -Al"
+alias lc="ls"
+alias lca="ls -A"
 
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
