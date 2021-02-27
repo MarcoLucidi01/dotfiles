@@ -1,10 +1,13 @@
+" fzf plugin (debian install location)
+source /usr/share/doc/fzf/examples/fzf.vim
+
 set background=dark
 set t_Co=256             " 256 colors
 syntax on
 colorscheme solarized
 
 " custom color for listchars (trailing spaces and tabs)
-highlight SpecialKey cterm=NONE ctermbg=NONE ctermfg=244 gui=NONE guibg=NONE guifg=#839496
+highlight SpecialKey cterm=NONE ctermbg=NONE ctermfg=240 gui=NONE guibg=NONE guifg=#586e75
 
 set encoding=utf8        " set utf8 as standard encoding
 
@@ -41,7 +44,7 @@ set autoindent
 set smarttab             " smart tab handling for indenting
 set shiftwidth=8         " spaces for autoindent
 set list                 " needed to get listchars working
-set listchars=trail:-,tab:▸\  " show trailing spaces as - and tabs as ▸
+set listchars=trail:·,tab:·· " show trailing spaces and tabs as ·
 
 filetype plugin indent on
 
