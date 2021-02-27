@@ -17,7 +17,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -35,16 +35,16 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[M]",      monocle }, /* first entry is default */
-	{ "[]=",      tile },
+	{ "[]=",      tile },    /* first entry is default */
+	{ "[M]",      monocle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY,                       KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
@@ -55,8 +55,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]        = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base03, "-nf", base0, "-sb", base03, "-sf", yellow, NULL };
 static const char *termcmd[]         = { "st", "-e", "tmux", NULL };
-static const char *browsercmd[]      = { "firefox-esr", NULL };
-static const char *mailcmd[]         = { "thunderbird", NULL };
 static const char *lockscreencmd[]   = { "slock", NULL };
 static const char *sleepcmd[]        = { "systemctl", "suspend", NULL };
 static const char *volupcmd[]        = SHCMD("amixer -q set Master unmute 10%+ && refreshbar");
@@ -74,9 +72,7 @@ static const char *screenshootcmd[]  = SHCMD("scrot $HOME/screenshot_%Y%m%d%H%M%
 static Key keys[] = {
 	/* custom keys */
 	{ MODKEY,                       XK_p,                     spawn, {.v = dmenucmd        } },
-	{ Mod4Mask,                     XK_t,                     spawn, {.v = termcmd         } },
-	{ Mod4Mask,                     XK_w,                     spawn, {.v = browsercmd      } },
-	{ Mod4Mask,                     XK_m,                     spawn, {.v = mailcmd         } },
+	{ MODKEY|ShiftMask,             XK_Return,                spawn, {.v = termcmd         } },
 	{ ControlMask|ShiftMask,        XK_l,                     spawn, {.v = lockscreencmd   } },
 	{ ControlMask|ShiftMask,        XK_s,                     spawn, {.v = sleepcmd        } },
 	{ 0,                            XF86XK_Sleep,             spawn, {.v = sleepcmd        } },
@@ -107,8 +103,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
@@ -141,8 +137,8 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
+	{ ClkTagBar,            0,              Button1,        toggleview,     {0} },
+	{ ClkTagBar,            0,              Button3,        view,           {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
