@@ -15,6 +15,7 @@ enum {
  *   names              NULL terminated array of batteries names
  *   acname             usually AC
  *   low                low capacity level
+ *   lowcmd             command executed when low level is reached
  *   critical           critical capacity level
  *   criticalcmd        command executed when critical level is reached
  */
@@ -22,6 +23,9 @@ BatConfig batconfig = {
         .names       = (char *[]){ "BAT0", "BAT1", NULL },
         .acname      = "AC",
         .low         = 40,
+        .lowcmd      = "gxmessage -bg red -fg white -center -font 'monospace 50' -default okay "
+                       "-title 'battery low' "
+                       "'battery level low\nplug the cable!'",
         .critical    = 20,
         .criticalcmd = "systemctl poweroff"
 };
