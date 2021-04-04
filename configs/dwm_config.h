@@ -63,8 +63,8 @@ static const char *voltogglecmd[]    = SHCMD("amixer -q set Master toggle && ref
 static const char *mpvplaypausecmd[] = SHCMD("echo cycle pause > $HOME/.config/mpv/control");
 static const char *mpvnextcmd[]      = SHCMD("echo playlist-next > $HOME/.config/mpv/control");
 static const char *mpvprevcmd[]      = SHCMD("echo playlist-prev > $HOME/.config/mpv/control");
-static const char *brightupcmd[]     = SHCMD("xbacklight -inc 10");
-static const char *brightdowncmd[]   = SHCMD("xbacklight -dec 10");
+static const char *brightupcmd[]     = { "xbacklight", "-inc", "10", NULL };
+static const char *brightdowncmd[]   = { "xbacklight", "-dec", "10", NULL };
 static const char *screenshootcmd[]  = SHCMD("scrot $HOME/screenshot_%Y%m%d%H%M%S.png");
 
 #include <X11/XF86keysym.h>
