@@ -26,7 +26,8 @@ alias gds="git diff --staged"
 alias gf="git fetch"
 alias gl="git log --graph --date='format:%Y-%m-%d %H:%M' --pretty='format:%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s'"
 alias gp="git pull"
-alias gs="git status --short"
+alias gs="git status"
+alias gss="git status --short"
 
 # apt-get
 alias purge="sudo apt-get purge"
