@@ -8,7 +8,7 @@ alias w="web"
 alias y="youtube"
 
 # ls
-alias la="l -A"
+alias la="ls -A1"
 alias lal="ls -Al"
 alias lc="ls"
 alias lca="ls -A"
