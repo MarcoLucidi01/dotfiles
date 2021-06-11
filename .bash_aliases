@@ -1,9 +1,7 @@
 # one character
-alias g="git"
 alias l="ls -1"
 alias p="pwd"
 alias t="todo"
-alias v="vim"
 alias w="web"
 alias y="youtube"
 
