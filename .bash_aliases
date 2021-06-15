@@ -35,5 +35,6 @@ alias upinstall="sudo apt-get update && sudo apt-get install"
 
 # misc
 alias ..="cd .."
+alias cal="ncal -M -b"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
