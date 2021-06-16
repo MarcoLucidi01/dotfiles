@@ -2,7 +2,7 @@
 
 PREFIX  = $(HOME)
 DEST    = $(DESTDIR)$(PREFIX)
-EXCLUDE = $(patsubst %,--exclude="%", .git* *.swp makefile readme.md license)
+EXCLUDE = $(patsubst %,--exclude="%", .git* *.swp nohome makefile readme.md license)
 
 install:
 	mkdir -p "$(DEST)"
