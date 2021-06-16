@@ -11,7 +11,7 @@ alias lal="ls -Al"
 alias lc="ls"
 alias lca="ls -A"
 alias ll="ls -l"
-alias ls="ls --color=auto -F -h"
+alias ls="ls -Fh --literal --color=auto"
 
 # git
 alias ga="git add"
