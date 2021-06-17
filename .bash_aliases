@@ -1,6 +1,6 @@
 # one character
+alias d="pwd"
 alias l="ls -1"
-alias p="pwd"
 alias t="todo"
 alias w="web"
 alias y="youtube"
