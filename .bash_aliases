@@ -33,6 +33,10 @@ alias spurge="sudo apt-get -s purge"
 alias supinstall="sudo apt-get update && sudo apt-get -s install"
 alias upinstall="sudo apt-get update && sudo apt-get install"
 
+# translate
+alias tre="translate en:it"
+alias tri="translate it:en"
+
 # misc
 alias ..="cd .."
 alias cal="ncal -M -b"
