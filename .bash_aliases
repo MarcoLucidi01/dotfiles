@@ -26,6 +26,7 @@ alias gl="git log --graph --date='format:%Y-%m-%d %H:%M' --pretty='format:%C(yel
 alias gp="git pull"
 alias gs="git status"
 alias gss="git status --short"
+alias gw="git show"
 
 # apt-get
 alias purge="sudo apt-get purge"
