@@ -22,11 +22,11 @@ enum {
 BatConfig batconfig = {
         .names       = (char *[]){ "BAT0", "BAT1", NULL },
         .acname      = "AC",
-        .low         = 40,
+        .low         = 30,
         .lowcmd      = "gxmessage -bg red -fg white -center -font 'monospace 50' -default okay "
                        "-title 'battery low' "
                        "'battery level low\nplug the cable!'",
-        .critical    = 20,
+        .critical    = 15,
         .criticalcmd = "systemctl poweroff"
 };
 
