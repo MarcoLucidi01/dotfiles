@@ -1,6 +1,16 @@
-# enable vi-like keybindings in all Readline based programs
+# enable vi-like keybindings in all readline based programs
 set editing-mode vi
 
-Control-l: clear-screen
-
 set completion-ignore-case on
+
+# replace common prefix with ... if longer than 3
+set completion-prefix-display-length 3
+
+# append / even on symlinked directories
+set mark-symlinked-directories on
+
+# show completions immediately
+set show-all-if-ambiguous on
+
+# keybindings
+Control-l: clear-screen
