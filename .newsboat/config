@@ -1,0 +1,40 @@
+# automatic parallel feed reload
+auto-reload yes
+reload-threads 50
+reload-time 5
+
+# vi keys
+bind-key a toggle-article-read
+bind-key s sort
+bind-key k up
+bind-key j down
+bind-key K prev-feed articlelist
+bind-key J next-feed articlelist
+bind-key g home
+bind-key G end
+bind-key u pageup
+bind-key d pagedown
+bind-key N prev-unread
+bind-key n next-unread
+
+# pass url to other programs using set browser macro "hack"
+browser "web '%u'"
+macro p set browser "web --private '%u'" ; open-in-browser ; set browser "web '%u'"
+macro c set browser "echo '%u' | xclip -r -sel c" ; open-in-browser ; set browser "web '%u'"
+macro y set browser "mpv '%u'" ; open-in-browser ; set browser "web '%u'"
+macro D set browser "youtube-dl --quiet '%u' &" ; open-in-browser ; set browser "web '%u'"
+
+# colors and regex highlight
+color article           default default
+color background        default default
+color info              yellow  black
+color listfocus         yellow  default bold
+color listfocus_unread  yellow  default bold
+color listnormal        default default
+color listnormal_unread blue    default bold
+
+highlight article  "^(Title):.*$"   blue   default
+highlight article  "https?://[^ ]+" cyan   default
+# "hack" to show/highlight subheadings
+highlight feedlist "---.*---"       yellow default
+highlight feedlist ".*0/0.."        black  default
