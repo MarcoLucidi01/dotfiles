@@ -1,0 +1,1 @@
+--output $HOME/downloads/%(title)s-%(id)s.%(ext)s
