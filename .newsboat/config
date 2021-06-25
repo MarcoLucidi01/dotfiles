@@ -1,7 +1,6 @@
 # automatic parallel feed reload
 auto-reload yes
 reload-threads 50
-reload-time 5
 
 # vi keys
 bind-key a toggle-article-read
