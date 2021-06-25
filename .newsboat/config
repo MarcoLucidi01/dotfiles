@@ -16,6 +16,10 @@ bind-key d pagedown
 bind-key N prev-unread
 bind-key n next-unread
 
+# formats
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+datetime-format "%Y-%m-%d"
+
 # pass url to other programs using set browser macro "hack"
 browser "web '%u'"
 macro p set browser "web --private '%u'" ; open-in-browser ; set browser "web '%u'"
