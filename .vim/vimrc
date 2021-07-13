@@ -1,6 +1,8 @@
 " fzf plugin (debian install location)
 source /usr/share/doc/fzf/examples/fzf.vim
 
+filetype plugin indent on
+
 set background=dark
 set t_Co=256             " 256 colors
 syntax on
@@ -48,8 +50,6 @@ set shiftwidth=8         " spaces for autoindent
 set list                 " needed to get listchars working
 set listchars=trail:·,tab:·· " show trailing spaces and tabs as ·
 
-filetype plugin indent on
-
 set formatoptions+=j     " remove a comment leader when joining lines
 set backspace=indent,eol,start " proper backspace behavior
 
@@ -73,18 +73,18 @@ autocmd BufReadPost *
 command! MakeTags !ctags -R .
 
 " make this line a (nice) markdown header
-command H1 normal yypVr=2o<ESC>
-command H2 normal yypVr-2o<ESC>
+command! H1 normal yypVr=2o<ESC>
+command! H2 normal yypVr-2o<ESC>
 
 " toggle paste mode
 set pastetoggle=<F2>
 
 " turn off highlighting after a search
-map <F3> :nohlsearch<CR>
+nnoremap <F3> :nohlsearch<CR>
 
 " toggle spell checker
-map <F5> :setlocal spell! spelllang=en,it<CR>
+nnoremap <F4> :setlocal spell! spelllang=en,it<CR>
 
-" list buffers and prepare for switching
-map gb :buffers<CR>:b
+" list buffers and prepare to switch
+nnoremap gb :buffers<CR>:b
 
