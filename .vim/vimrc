@@ -51,6 +51,7 @@ set listchars=trail:·,tab:·· " show trailing spaces and tabs as ·
 filetype plugin indent on
 
 set formatoptions+=j     " remove a comment leader when joining lines
+set backspace=indent,eol,start " proper backspace behavior
 
 set ruler                " show line and column number of the cursor position
 set laststatus=2         " always show statusline
