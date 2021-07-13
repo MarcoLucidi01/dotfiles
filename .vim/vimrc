@@ -14,6 +14,7 @@ set encoding=utf8        " set utf8 as standard encoding
 set complete+=kspell     " word completion
 set completeopt=menuone  " show completion menu even if there's only one match
 set completeopt+=longest " insert only longest common text of all matches
+set omnifunc=syntaxcomplete#Complete " basic completion for programming languages (C-x C-O)
 
 set wildmenu             " command-line completion menu
 set wildignorecase       " ignore case when completing file names and directories
