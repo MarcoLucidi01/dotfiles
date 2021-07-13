@@ -79,15 +79,9 @@ set pastetoggle=<F2>
 " turn off highlighting after a search
 map <F3> :nohlsearch<CR>
 
-" open files explorer
-map <F4> :Explore<CR>
-
 " toggle spell checker
 map <F5> :setlocal spell! spelllang=en,it<CR>
 
 " list buffers and prepare for switching
 map gb :buffers<CR>:b
 
-let g:netrw_banner=0                                " hide banner
-let g:netrw_liststyle=3                             " tree view
-let g:netrw_bufsettings='noma nomod nobl nowrap ro' " keep relative numbers
