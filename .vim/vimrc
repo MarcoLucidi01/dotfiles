@@ -88,3 +88,6 @@ nnoremap <F4> :setlocal spell! spelllang=en,it<CR>
 " list buffers and prepare to switch
 nnoremap gb :buffers<CR>:b
 
+" recenter after hitting next/previous search match
+nnoremap n nzz
+nnoremap N Nzz
