@@ -68,8 +68,8 @@ static const char *mpvnextcmd[]           = SHCMD("echo playlist-next > $HOME/.c
 static const char *mpvprevcmd[]           = SHCMD("echo playlist-prev > $HOME/.config/mpv/control");
 static const char *brightupcmd[]          = { "xbacklight", "-inc", "10", NULL };
 static const char *brightdowncmd[]        = { "xbacklight", "-dec", "10", NULL };
-static const char *screenshotcmd[]        = SHCMD("scrot $HOME/pics/screenshot-%Y%m%d-%H%M%S.png");
-static const char *screenshotfocusedcmd[] = SHCMD("scrot --focused $HOME/pics/screenshot-%Y%m%d-%H%M%S.png");
+static const char *screenshotcmd[]        = SHCMD("scrot $HOME/pics/screenshots/screenshot-%Y%m%d-%H%M%S.png");
+static const char *screenshotfocusedcmd[] = SHCMD("scrot --focused $HOME/pics/screenshots/screenshot-%Y%m%d-%H%M%S.png");
 
 #include <X11/XF86keysym.h>
 
