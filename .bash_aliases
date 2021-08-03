@@ -39,6 +39,10 @@ alias upinstall="sudo apt-get update && sudo apt-get install"
 alias tre="translate en:it"
 alias tri="translate it:en"
 
+# todo
+alias tclip="todoclip"
+alias tweb="todoweb"
+
 # misc
 alias ..="cd .."
 alias cal="ncal -M -b"
