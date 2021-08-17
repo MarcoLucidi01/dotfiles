@@ -57,6 +57,6 @@ export GOPATH="$HOME/.go"
 export FZF_DEFAULT_COMMAND="find ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -type d"
-export FZF_DEFAULT_OPTS="--multi --reverse --height=90% --bind=esc:cancel --color=fg+:136,hl:37,hl+:37"
-. /usr/share/bash-completion/completions/fzf
-. /usr/share/doc/fzf/examples/key-bindings.bash
+export FZF_DEFAULT_OPTS="--multi --reverse --height=50% --bind=esc:cancel --color=fg+:136,hl:37,hl+:37"
+source /usr/share/doc/fzf/examples/completion.bash
+source /usr/share/doc/fzf/examples/key-bindings.bash
