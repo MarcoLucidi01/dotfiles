@@ -66,8 +66,8 @@ static const char *voltogglecmd[]         = SHCMD("amixer -q set Master toggle &
 static const char *mpvplaypausecmd[]      = SHCMD("echo 'cycle pause' | socat - /tmp/mpv-socket");
 static const char *mpvnextcmd[]           = SHCMD("echo 'playlist-next' | socat - /tmp/mpv-socket");
 static const char *mpvprevcmd[]           = SHCMD("echo 'playlist-prev' | socat - /tmp/mpv-socket");
-static const char *brightupcmd[]          = { "xbacklight", "-inc", "10", NULL };
-static const char *brightdowncmd[]        = { "xbacklight", "-dec", "10", NULL };
+static const char *brightupcmd[]          = { "light", "-A", "10", NULL };
+static const char *brightdowncmd[]        = { "light", "-U", "10", NULL };
 static const char *screenshotcmd[]        = SHCMD("scrot $HOME/pics/screenshots/screenshot-%Y%m%d-%H%M%S.png");
 static const char *screenshotfocusedcmd[] = SHCMD("scrot --focused $HOME/pics/screenshots/screenshot-%Y%m%d-%H%M%S.png");
 
