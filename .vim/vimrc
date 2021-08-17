@@ -11,6 +11,9 @@ colorscheme solarized
 " custom color for listchars (trailing spaces and tabs)
 highlight SpecialKey cterm=NONE ctermbg=NONE ctermfg=240 gui=NONE guibg=NONE guifg=#586e75
 
+" remove default underline from current line number (https://stackoverflow.com/questions/58174536)
+highlight CursorLineNr cterm=NONE
+
 set encoding=utf8        " set utf8 as standard encoding
 
 set complete+=kspell     " word completion
