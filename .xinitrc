@@ -25,4 +25,7 @@ compton --daemon --backend glx --glx-no-stencil --glx-no-rebind-pixmap --vsync o
 # set background to black (xsetroot doesn't work with compton)
 hsetroot -solid '#000000' &
 
+# fix misbehaving java apps
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 exec dwm
