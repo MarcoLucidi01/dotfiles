@@ -1,0 +1,13 @@
+# zoom with +/-
+zoom_in         plus    Up
+zoom_out        minus   Down
+
+# vi keys for navigation
+next_img        K       Right   space
+prev_img        J       Left    BackSpace
+
+# vi keys for scrolling
+scroll_up       k       C-Up
+scroll_down     j       C-Down
+scroll_left     h       C-Left
+scroll_right    l       C-Right
