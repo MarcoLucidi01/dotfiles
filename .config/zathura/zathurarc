@@ -1,0 +1,20 @@
+# paste with Ctrl+V instead of middle mouse button
+set selection-clipboard "clipboard"
+
+# toggle dual page view
+map [normal]            <C-d> toggle_page_mode
+map [fullscreen]        <C-d> toggle_page_mode
+
+# easier half page scroll
+map [normal]            d scroll half-down
+map [fullscreen]        d scroll half-down
+map [normal]            u scroll half-up
+map [fullscreen]        u scroll half-up
+
+# fullscreen
+map [normal]            f toggle_fullscreen
+map [fullscreen]        f toggle_fullscreen
+
+# status bar
+map [normal]            b toggle_statusbar
+map [fullscreen]        b toggle_statusbar
