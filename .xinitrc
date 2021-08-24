@@ -18,9 +18,8 @@ xcape -e 'Caps_Lock=Escape' &
 # status bar daemon
 sbard &
 
-# compositor to fix screen tearing using modesetting video driver. these
-# settings should improve overall performance
-compton --daemon --backend glx --glx-no-stencil --glx-no-rebind-pixmap --vsync opengl --unredir-if-possible &
+# compositor to fix screen tearing while using modesetting video driver
+compton --daemon &
 
 # set background to black (xsetroot doesn't work with compton)
 hsetroot -solid '#000000' &
