@@ -66,6 +66,7 @@ set spellcapcheck=       " do not spell check capital letters
 
 " go wants tabs
 autocmd Filetype go setlocal noexpandtab
+autocmd Filetype go setlocal listchars=trail:·,tab:\ \ 
 
 " return to last edit position when opening files
 autocmd BufReadPost *
