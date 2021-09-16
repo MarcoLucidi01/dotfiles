@@ -1,5 +1,6 @@
 " fzf plugin (debian install location)
 source /usr/share/doc/fzf/examples/fzf.vim
+let $FZF_DEFAULT_COMMAND="find -L . -type f" " :FZF show only files
 
 filetype plugin indent on
 
