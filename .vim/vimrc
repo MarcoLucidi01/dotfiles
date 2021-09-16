@@ -31,7 +31,6 @@ set hidden               " possibility to have more than one unsaved buffer
 set viminfo+=n~/.vim/viminfo " viminfo file inside ~/.vim
 
 set scrolloff=3          " scroll lines offset using j/k
-set relativenumber       " numbers are relative to current line
 
 set ignorecase           " ignore case when searching
 set smartcase            " but become case sensitive if there are uppercase characters
