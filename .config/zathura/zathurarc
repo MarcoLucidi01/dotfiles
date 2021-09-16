@@ -11,10 +11,6 @@ map [fullscreen]        d scroll half-down
 map [normal]            u scroll half-up
 map [fullscreen]        u scroll half-up
 
-# fullscreen
-map [normal]            f toggle_fullscreen
-map [fullscreen]        f toggle_fullscreen
-
 # status bar
 map [normal]            b toggle_statusbar
 map [fullscreen]        b toggle_statusbar
