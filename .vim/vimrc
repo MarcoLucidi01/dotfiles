@@ -23,6 +23,7 @@ set completeopt+=longest " insert only longest common text of all matches
 set omnifunc=syntaxcomplete#Complete " basic completion for programming languages (C-x C-O)
 
 set wildmenu             " command-line completion menu
+set wildmode=longest,list,full " complete longest common prefix before full
 set wildignorecase       " ignore case when completing file names and directories
 
 set history=50
