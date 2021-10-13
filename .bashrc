@@ -50,6 +50,17 @@ function zpwd() {
 }
 alias z="zpwd"
 
+# pass options to claws-mail if already running (e.g. --status, --compose),
+# otherwise run it in the background
+function claws() {
+        if [ "$#" -gt 0 ] && pgrep claws-mail > /dev/null; then
+                claws-mail "$@"
+        else
+                (cd "$HOME" && claws-mail "$@" > /dev/null 2>&1 &)
+        fi
+}
+alias m="claws"
+
 # go workspace path
 export GOPATH="$HOME/.go"
 

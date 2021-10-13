@@ -2,7 +2,6 @@
 alias d="pwd"
 alias g="git"
 alias l="ls -1"
-alias m="mutt"
 alias n="newsboat"
 alias t="todo"
 alias v="vim"
