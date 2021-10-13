@@ -8,26 +8,27 @@ enum {
 };
 
 /*
- * Configuration for the battery function. I have 2 batteries inside my laptop,
- * that's why names is an array and the function return a sum. low and critical
- * levels refers to the sum.
+ * Configuration for the battery function.
  *
- *   names              NULL terminated array of batteries names
- *   acname             usually AC
- *   low                low capacity level
- *   lowcmd             command executed when low level is reached
- *   critical           critical capacity level
- *   criticalcmd        command executed when critical level is reached
+ * Look at /sys/class/power_supply for battery and AC names.
+ * TODO battery and AC names could be easily detected at runtime.
+ *
+ * The function returns average capacity percentage.
+ *
+ *   names        NULL terminated array of battery names
+ *   acname       usually AC
+ *   low          low capacity level
+ *   critical     critical capacity level
+ *   criticalcmd  command executed when critical level is reached (or NULL for no command)
  */
 BatConfig batconfig = {
-        .names       = (char *[]){ "BAT0", "BAT1", NULL },
+        .names       = (const char *[]){ "BAT0", "BAT1", NULL },
         .acname      = "AC",
-        .low         = 30,
-        .lowcmd      = "gxmessage -bg red -fg white -center -font 'monospace 50' -default okay "
-                       "-title 'battery low' "
-                       "'battery level low\nplug the cable!'",
-        .critical    = 15,
-        .criticalcmd = "systemctl poweroff"
+        .low         = 20,
+        .critical    = 10,
+        .criticalcmd = "gxmessage -bg red -fg white -center -font 'monospace 50' -default cancel "
+                       "-title 'battery level critical' -buttons 'systemctl poweroff:0,cancel:1' "
+                       "'battery reached\ncritical level!' && systemctl poweroff",
 };
 
 /*
@@ -36,7 +37,7 @@ BatConfig batconfig = {
  *
  *   function    return                                                 argument
  *
- *   battery     sum of the capacity of batteries and ac status         BatConfig
+ *   battery     average capacity percentage of batteries and ac status BatConfig
  *   datetime    formatted date and/or time                             format string for strftime()
  *   memory      amount of memory used in MB or GB                      NULL
  *   sh          first line of output of shell command                  shell command to run
@@ -47,5 +48,5 @@ BatConfig batconfig = {
 Config config[] = {
         { .fmt = "v:%s ",       .func = volume,         .arg = NULL },
         { .fmt = "b:%s ",       .func = battery,        .arg = &batconfig },
-        { .fmt = "%s",          .func = datetime,       .arg = "%Y-%m-%d %H:%M" },
+        { .fmt = "%s",          .func = datetime,       .arg = "%H:%M" },
 };
