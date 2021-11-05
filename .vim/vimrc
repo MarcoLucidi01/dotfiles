@@ -64,6 +64,9 @@ set lazyredraw           " do not redraw screen in the middle of a macro
 
 set spellcapcheck=       " do not spell check capital letters
 
+set cscopetag            " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+set cscopetagorder=0     " check cscope for definition of a symbol before checking ctags
+
 " go wants tabs
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype go setlocal listchars=trail:·,tab:\ \ 
@@ -74,8 +77,16 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-" MakeTags creates the "tags" file (ctags must be installed)
-command! MakeTags !ctags -R .
+" index code using ctags and cscope and (re)load cscope database
+function! Index()
+    silent !ctags -R .
+    silent !cscope -Rbq
+    redraw!
+    cscope kill 0
+    cscope add cscope.out
+endfunction
+
+command! Index :call Index()
 
 " make this line a (nice) markdown header
 command! H1 normal yypVr=2o<ESC>
@@ -96,3 +107,12 @@ nnoremap gb :buffers<CR>:b
 " recenter after hitting next/previous search match
 nnoremap n nzz
 nnoremap N Nzz
+
+" Ctrl+Space cscope find c symbol under cursor
+nnoremap <C-@> :cscope find s <C-R>=expand("<cword>")<CR><CR>
+
+" cscope find this file
+cnoreabbrev csf cscope find f
+
+" cscope find this c symbol
+cnoreabbrev css cscope find s
