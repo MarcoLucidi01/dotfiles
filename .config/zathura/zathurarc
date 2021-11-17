@@ -1,3 +1,6 @@
+# fix broken open link when firefox it's not already running
+set sandbox none
+
 # paste with Ctrl+V instead of middle mouse button
 set selection-clipboard "clipboard"
 
