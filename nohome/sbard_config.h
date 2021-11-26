@@ -48,5 +48,5 @@ BatConfig batconfig = {
 Config config[] = {
         { .fmt = "v:%s ",       .func = volume,         .arg = NULL },
         { .fmt = "b:%s ",       .func = battery,        .arg = &batconfig },
-        { .fmt = "%s",          .func = datetime,       .arg = "%H:%M" },
+        { .fmt = "%s",          .func = datetime,       .arg = "%a-%d-%b %H:%M" },
 };
