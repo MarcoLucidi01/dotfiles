@@ -19,9 +19,9 @@ xcape -e 'Caps_Lock=Escape' &
 sbard &
 
 # compositor to fix screen tearing while using modesetting video driver
-compton --daemon &
+picom --daemon &
 
-# set background to black (xsetroot doesn't work with compton)
+# set background to black (xsetroot doesn't work with picom)
 hsetroot -solid '#000000' &
 
 # fix misbehaving java apps
