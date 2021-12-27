@@ -6,7 +6,6 @@ alias n="newsboat"
 alias t="todo"
 alias v="vim"
 alias w="web"
-alias y="youtube"
 
 # ls
 alias la="ls -A1"
@@ -57,4 +56,4 @@ alias feh="feh --theme options"
 alias grep="grep --color=auto"
 alias music="mpv --shuffle $HOME/music"
 alias note="vim $HOME/docs/notes"
-alias ydl="youtube-dl"
+alias ytdl="youtube-dl"
