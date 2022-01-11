@@ -19,7 +19,7 @@ xcape -e 'Caps_Lock=Escape' &
 sbard &
 
 # compositor to fix screen tearing while using modesetting video driver
-picom --daemon &
+picom --daemon --backend glx --glx-no-stencil --vsync &
 
 # set background to black (xsetroot doesn't work with picom)
 hsetroot -solid '#000000' &
