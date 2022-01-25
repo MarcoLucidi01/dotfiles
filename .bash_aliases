@@ -40,10 +40,6 @@ alias upinstall="sudo apt-get update && sudo apt-get install"
 alias tre="translate en:it"
 alias tri="translate it:en"
 
-# todo
-alias tclip="todoclip"
-alias tweb="todoweb"
-
 # headphones
 alias ep="headphones A8:4D:4A:08:98:AE"
 alias hp="headphones 78:2B:64:13:E0:C4"
