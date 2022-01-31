@@ -1,7 +1,3 @@
-" fzf plugin (debian install location)
-source /usr/share/doc/fzf/examples/fzf.vim
-let $FZF_DEFAULT_COMMAND="find -L . -type f" " :FZF show only files
-
 filetype plugin indent on
 
 set background=dark
@@ -21,14 +17,17 @@ set complete+=kspell     " word completion
 set completeopt=menuone  " show completion menu even if there's only one match
 set completeopt+=longest " insert only longest common text of all matches
 set omnifunc=syntaxcomplete#Complete " basic completion for programming languages (C-x C-O)
+set infercase            " infer case sensitivity when doing keyword completion
 
 set wildmenu             " command-line completion menu
 set wildmode=longest,list,full " complete longest common prefix before full
 set wildignorecase       " ignore case when completing file names and directories
 
+set autowrite            " automatically write file changes on each :make, :next, etc...
+set autoread             " automatically reload file if changed outside vim
 set history=50
 set nobackup             " no backup files
-set hidden               " possibility to have more than one unsaved buffer
+set hidden               " allow more than one unsaved buffer
 set viminfo+=n~/.vim/viminfo " viminfo file inside ~/.vim
 
 set scrolloff=3          " scroll lines offset using j/k
@@ -46,6 +45,7 @@ set cursorline           " highlights current line
 set splitbelow           " open horizontal split below
 set splitright           " open vertical split on the right
 
+set modeline             " enable modeline detection
 set expandtab            " spaces instead of tabs
 set tabstop=8            " 1 tab == 8 spaces
 set autoindent
@@ -64,12 +64,7 @@ set lazyredraw           " do not redraw screen in the middle of a macro
 
 set spellcapcheck=       " do not spell check capital letters
 
-set cscopetag            " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
-set cscopetagorder=0     " check cscope for definition of a symbol before checking ctags
-
-" go wants tabs
-autocmd Filetype go setlocal noexpandtab
-autocmd Filetype go setlocal listchars=trail:·,tab:\ \ 
+let mapleader=","        " use , as <leader> in mappings
 
 " return to last edit position when opening files
 autocmd BufReadPost *
@@ -77,20 +72,12 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-" index code using ctags and cscope and (re)load cscope database
-function! Index()
-    silent !ctags -R .
-    silent !cscope -Rbq
-    redraw!
-    cscope kill 0
-    cscope add cscope.out
-endfunction
-
-command! Index :call Index()
-
 " make this line a (nice) markdown header
 command! H1 normal yypVr=2o<ESC>
 command! H2 normal yypVr-2o<ESC>
+
+" insert current date
+command! Date read ! date "+\# \%a, \%d \%b \%Y \%H:\%M"
 
 " toggle paste mode
 set pastetoggle=<F2>
@@ -108,11 +95,54 @@ nnoremap gb :buffers<CR>:b
 nnoremap n nzz
 nnoremap N Nzz
 
+" Ctrl+Space omni completion shortcut
+inoremap <C-@> <C-x><C-o>
+
+" jump quickly between quickfix list errors
+nnoremap <C-n> :cnext<CR>
+nnoremap <C-p> :cprevious<CR>
+nnoremap <C-c> :cclose<CR>
+
+" cscope
+" ==============================================================================
+set cscopetag            " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+set cscopetagorder=0     " check cscope for definition of a symbol before checking ctags
+
+" index code using ctags and cscope and (re)load cscope database
+command! Index :call Index()
+function! Index()
+    silent !ctags -R .
+    silent !cscope -Rbq
+    redraw!
+    cscope kill 0
+    cscope add cscope.out
+endfunction
+
 " Ctrl+Space cscope find c symbol under cursor
 nnoremap <C-@> :cscope find s <C-R>=expand("<cword>")<CR><CR>
+
+" cscope find this c symbol
+cnoreabbrev css cscope find s
 
 " cscope find this file
 cnoreabbrev csf cscope find f
 
-" cscope find this c symbol
-cnoreabbrev css cscope find s
+" fzf
+" ==============================================================================
+set runtimepath+=/usr/share/doc/fzf/examples " debian install location
+let $FZF_DEFAULT_COMMAND="find -L . -type f -not -path '*.git/*'" " :FZF show only files
+
+" vim-go
+" ==============================================================================
+let g:go_fmt_command="goimports" " run at each save
+let g:go_list_type="quickfix"    " always use quickfix list for showing and jump to errors
+
+" go wants tabs
+autocmd Filetype go setlocal noexpandtab
+autocmd Filetype go setlocal listchars=trail:·,tab:\ \ 
+
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>l <Plug>(go-metalinter)
+autocmd FileType go nmap <leader>r <Plug>(go-rename)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
