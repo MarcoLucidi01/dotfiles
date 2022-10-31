@@ -48,6 +48,10 @@ alias hp="headphones 78:2B:64:13:E0:C4"
 alias ytdl="youtube-dl"
 alias ytjson="youtube-dl --dump-json --flat-playlist"
 
+# playurl
+alias tv="playurl $HOME/.tvurls"
+alias radio="playurl $HOME/.radiourls"
+
 # misc
 alias ..="cd .."
 alias cal="ncal -M -b"
