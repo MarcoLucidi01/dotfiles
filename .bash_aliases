@@ -2,7 +2,6 @@
 alias d="pwd"
 alias g="git"
 alias l="ls -1"
-alias n="vim $HOME/docs/notes"
 alias t="todo"
 alias v="vim"
 alias w="web"
