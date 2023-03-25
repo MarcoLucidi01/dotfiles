@@ -10,7 +10,7 @@ if [ -d "$HOME/bin" ]; then
         PATH="$HOME/bin:$PATH"
 fi
 
-# run startx after login in text mode
+# run ssh-agent and startx after login in text mode
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-        exec startx
+        exec ssh-agent startx
 fi
