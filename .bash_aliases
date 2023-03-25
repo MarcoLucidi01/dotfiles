@@ -51,6 +51,11 @@ alias ytjson="youtube-dl --dump-json --flat-playlist"
 alias tv="playurl $HOME/.tvurls"
 alias radio="playurl $HOME/.radiourls"
 
+# interactive
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
 # misc
 alias ..="cd .."
 alias cal="ncal -M -b"
