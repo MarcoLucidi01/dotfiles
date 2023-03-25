@@ -1,7 +1,7 @@
 auto-reload yes
 reload-threads 10
 cleanup-on-quit yes
-keep-articles-days 60
+keep-articles-days 90
 max-items 200
 
 # vi keys
