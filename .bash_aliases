@@ -62,6 +62,5 @@ alias cal="ncal -M -b"
 alias diff="diff --color=auto"
 alias feh="feh --theme options"
 alias grep="grep --color=auto"
-alias music="mpv --shuffle $HOME/music"
 alias news="newsboat"
 alias xargs="xargs " # use xargs with aliases https://unix.stackexchange.com/a/244516/183407
