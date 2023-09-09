@@ -48,10 +48,6 @@ alias hp="headphones 78:2B:64:13:E0:C4"
 alias ytdl="yt-dlp"
 alias ytjson="yt-dlp --dump-json --flat-playlist"
 
-# playurl
-alias tv="playurl $HOME/.tvurls"
-alias radio="playurl $HOME/.radiourls"
-
 # interactive
 alias cp="cp -i"
 alias mv="mv -i"
