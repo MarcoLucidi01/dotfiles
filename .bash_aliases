@@ -44,9 +44,9 @@ alias tri="translate it:en"
 alias ep="headphones A8:4D:4A:08:98:AE"
 alias hp="headphones 78:2B:64:13:E0:C4"
 
-# youtube-dl
-alias ytdl="youtube-dl"
-alias ytjson="youtube-dl --dump-json --flat-playlist"
+# yt-dlp
+alias ytdl="yt-dlp"
+alias ytjson="yt-dlp --dump-json --flat-playlist"
 
 # playurl
 alias tv="playurl $HOME/.tvurls"
