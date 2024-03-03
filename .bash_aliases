@@ -5,6 +5,7 @@ alias l="ls -1"
 alias t="todo"
 alias v="vim"
 alias w="web"
+alias x="xargs " # use xargs with aliases https://unix.stackexchange.com/a/244516/183407
 
 # ls
 alias la="ls -A1"
@@ -60,4 +61,3 @@ alias diff="diff --color=auto"
 alias feh="feh --theme options"
 alias grep="grep --color=auto"
 alias news="newsboat"
-alias xargs="xargs " # use xargs with aliases https://unix.stackexchange.com/a/244516/183407
