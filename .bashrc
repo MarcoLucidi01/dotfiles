@@ -64,10 +64,9 @@ alias m="claws"
 # go workspace path
 export GOPATH="$HOME/.go"
 
-# fzf setup, bash-bindings and bash-completion
+# fzf setup and bash-bindings
 export FZF_DEFAULT_COMMAND="find ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -type d"
 export FZF_DEFAULT_OPTS="--multi --reverse --height=50% --bind=esc:cancel --color=fg+:136,hl:37,hl+:37"
-source /usr/share/doc/fzf/examples/completion.bash
 source /usr/share/doc/fzf/examples/key-bindings.bash
