@@ -18,6 +18,7 @@ alias ls="ls -Fh --literal --color=auto"
 # git
 alias ga="git add"
 alias gap="git add --patch"
+alias gau="git add --update"
 alias gb="git branch"
 alias gc="git commit"
 alias gca="git commit --amend"
@@ -30,6 +31,7 @@ alias gp="git pull"
 alias gs="git status"
 alias gss="git status --short"
 alias gw="git show"
+alias gws="git show --stat"
 
 # apt-get
 alias purge="sudo apt-get purge"
