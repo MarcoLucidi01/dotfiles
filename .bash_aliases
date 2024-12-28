@@ -48,7 +48,7 @@ alias tre="translate en:it"
 alias tri="translate it:en"
 
 # headphones
-alias ep="headphones A8:4D:4A:08:98:AE"
+alias ep="headphones 41:42:95:9E:4F:26"
 alias hp="headphones 78:2B:64:13:E0:C4"
 
 # yt-dlp
