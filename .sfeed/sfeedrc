@@ -1,0 +1,42 @@
+feeds() {
+        . "$HOME/.sfeed/feeds.def"
+}
+
+# fetch(name, url, feedfile)
+fetch() {
+        curl --silent --location "$2"
+}
+
+# merge(name, oldfile, newfile)
+merge() {
+        if [ -s "$3" ]; then
+                # i want a maximum of 30 entries in my feeds, they are usually
+                # already sorted by upvotes, video upload time etc..
+                head -30 "$3"
+        else
+                # sometimes reddit rate-limits rss download, if the new file is
+                # empty, keep the old one
+                cat "$2"
+        fi
+}
+
+# order(name, url)
+order() {
+        # don't change feed's order because entries are usually already sorted
+        # by upvotes, video upload time etc..
+        case "$1" in
+        "hackernews" | "lobsters")
+                # content field ($4) contains the hackernews (or lobsters)
+                # comments link, extract it and use that as the link of entries.
+                # note: sometimes the lobsters comments link is already in $3.
+                awk -v "name=$1" '
+                BEGIN                      { FS="\t"; OFS=FS; islob=name=="lobsters" }
+                islob && $3 ~ /lobste\.rs/ { print; next }
+                                           { gsub("^(<p>)?<a href=\"", "", $4); gsub("\">.*$", "", $4) }
+                                           { link=$3; $3=$4; $4=link; $5="plain" }
+                                           { print }
+                ' ;;
+        *)
+                cat ;;
+        esac
+}
