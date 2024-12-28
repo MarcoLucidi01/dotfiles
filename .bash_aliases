@@ -10,10 +10,14 @@ alias x="xargs " # use xargs with aliases https://unix.stackexchange.com/a/24451
 # ls
 alias la="ls -A1"
 alias lal="ls -Al"
+alias lalt="ls -Alt | head"
+alias lat="ls -At1 | head"
 alias lc="ls"
 alias lca="ls -A"
 alias ll="ls -l"
+alias llt="ls -lt | head"
 alias ls="ls -Fh --literal --color=auto"
+alias lt="ls -t1 | head"
 
 # git
 alias ga="git add"
