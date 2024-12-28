@@ -1,5 +1,5 @@
 {
-  "settingsVersion": "1.67",
+  "settingsVersion": "1.67.7",
   "exclusionRules": [],
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
@@ -15,7 +15,7 @@
   "scrollStepSize": 60,
   "smoothScroll": true,
   "grabBackFocus": true,
-  "searchEngines": "a: https://www.amazon.it/s/?field-keywords=%s Amazon\ng: https://www.google.com/search?q=%s Google\nm: https://www.google.com/maps?q=%s Google maps\nr: https://old.reddit.com/r/%s Reddit\ns: https://www.google.com/search?q=site:stackoverflow.com%20%s StackOverflow\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: https://www.youtube.com/results?search_query=%s YouTube",
+  "searchEngines": "a: https://www.amazon.it/s/?field-keywords=%s Amazon\nd: https://duckduckgo.com/?q=%s DuckDuckGo\ng: https://www.google.com/search?q=%s Google\nm: https://www.google.com/maps?q=%s Google maps\nr: https://old.reddit.com/r/%s Reddit\ns: https://www.google.com/search?q=site:stackoverflow.com%20%s StackOverflow\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: https://www.youtube.com/results?search_query=%s YouTube",
   "searchUrl": "https://www.google.com/search?q=",
   "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
 }
